@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import playground from './playground'
+import playground from './playground';
 
 export default {
   name: 'app',
   created() {
-    playground()
-  }
-}
+    playground();
+  },
+};
 </script>
 
 <style>
