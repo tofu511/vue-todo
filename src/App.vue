@@ -1,6 +1,41 @@
 <template>
   <div id="app">
-    <h1>Hello World</h1>
+    <div class="todo-wrapper">
+      <div class="todo-container">
+        <div class="todo-list">
+           <div class="todo-item">
+             <div class="todo-item-content">
+               <div class="todo-item-content-title">
+                 Walk the dog
+               </div>
+               <div class="todo-item-content-description">
+                 Go to forrest near the Zoo
+               </div>
+             </div>
+           </div>
+           <div class="todo-item">
+             <div class="todo-item-content">
+               <div class="todo-item-content-title">
+                 Buy a bread
+               </div>
+               <div class="todo-item-content-description">
+                 Whole grain bread would be good
+               </div>
+             </div>
+           </div>
+           <div class="todo-item">
+             <div class="todo-item-content">
+               <div class="todo-item-content-title">
+                 Learn programming
+               </div>
+               <div class="todo-item-content-description">
+                 Tomorrow would be best!
+               </div>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,4 +59,38 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.todo-container {
+  width: 400px;
+  min-height: 400px;
+  background-color: #ededed;
+  border-radius: 5px;
+}
+
+.todo-wrapper {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  width: 100%;
+  /* height: 2000px; */
+}
+
+.todo-item {
+  background-color: gray;
+  min-height: 70px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 23px;
+}
+
+.todo-item-content-title {
+  font-weight: bold;
+}
+
+.todo-item-content-description {
+  font-size: 19px;
+}
+
 </style>
