@@ -4,31 +4,35 @@
       <div class="todo-container">
         <todo-list :todos="todos" />
         <div class="todo-create-btn-container">
-          <div class="app-button">
+          <div
+          class="app-button"
+          @click="isModalOpen = true"
+          >
             Create
           </div>
         </div>
       </div>
     </div>
-    <div class="modal">
-      <div class="modal-content">
-        Modal Window
-      </div>
-    </div>
+    <modal
+    @modalClosed="isModalOpen = false"
+    :isOpen="isModalOpen" />
   </div>
 </template>
 
 <script>
 import playground from './playground';
 import TodoList from '@/components/TodoList.vue';
+import Modal from '@/components/Modal.vue';
 
 export default {
   name: 'app',
   components: {
     TodoList,
+    Modal,
   },
   data() {
     return {
+      isModalOpen: false,
       todos: [
         {
           _id: '1',
@@ -72,6 +76,9 @@ export default {
   color: white;
   font-weight: bold;
 
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .todo {
@@ -83,31 +90,17 @@ export default {
     /* height: 2000px; */
   }
 
+  &-create-btn-container {
+    margin: 10px;
+  }
+
   &-container {
+    display: flex;
+    flex-direction: column;
     width: 400px;
     min-height: 400px;
     background-color: #ededed;
     border-radius: 5px;
-  }
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-
-  &-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
   }
 }
 

@@ -26,6 +26,9 @@ export default {
 
 <style lang="scss" scoped>
 .todo {
+  &-list {
+    flex: 1;
+  }
   &-item {
     background-color: gray;
     min-height: 70px;
