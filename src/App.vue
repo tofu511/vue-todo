@@ -4,18 +4,11 @@
       <div class="todo-container">
         <todo-list :todos="todos" />
         <div class="todo-create-btn-container">
-          <div
-          class="app-button"
-          @click="isModalOpen = true"
-          >
-            Create
-          </div>
+          <modal />
         </div>
       </div>
     </div>
-    <modal
-    @modalClosed="isModalOpen = false"
-    :isOpen="isModalOpen" />
+
   </div>
 </template>
 
