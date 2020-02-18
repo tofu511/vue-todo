@@ -8,17 +8,7 @@
     <div class="modal" :class="{'is-active': isOpen}">
       <div class="modal-content">
         <span @click="isOpen = false" class="close">&times;</span>
-        <form class="app-form">
-          <div class="form-control">
-            <label class="label">Title</label>
-            <input class="form-input" type="text">
-          </div>
-          <div class="form-control">
-            <label class="label">Description</label>
-            <input class="form-input" type="text">
-          </div>
-          <button type="button" class="app-button is-primary">Confirm</button>
-        </form>
+        <slot />
       </div>
     </div>
   </div>
@@ -29,11 +19,6 @@ export default {
     return {
       isOpen: false,
     };
-  },
-  methods: {
-    emitCloseModal() {
-      this.$emit('modalClosed');
-    },
   },
 };
 </script>

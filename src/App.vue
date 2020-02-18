@@ -4,7 +4,7 @@
       <div class="todo-container">
         <todo-list :todos="todos" />
         <div class="todo-create-btn-container">
-          <modal />
+          <todo-create />
         </div>
       </div>
     </div>
@@ -15,17 +15,16 @@
 <script>
 import playground from './playground';
 import TodoList from '@/components/TodoList.vue';
-import Modal from '@/components/Modal.vue';
+import TodoCreate from '@/components/TodoCreate.vue';
 
 export default {
   name: 'app',
   components: {
     TodoList,
-    Modal,
+    TodoCreate,
   },
   data() {
     return {
-      isModalOpen: false,
       todos: [
         {
           _id: '1',
