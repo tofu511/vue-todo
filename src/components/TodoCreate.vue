@@ -17,7 +17,7 @@
           rows="10"></textarea>
       </div>
       <button
-      @click="createTodo"
+      @click="submitForm"
       type="button"
       class="app-button is-primary">Confirm</button>
     </form>
@@ -40,8 +40,13 @@ export default {
     };
   },
   methods: {
-    createTodo() {
-      console.log(this.form);
+    submitForm() {
+      this.$emit('formSubmitted', { ...this.form });
+      this.resetForm();
+    },
+    resetForm() {
+      this.form.title = '';
+      this.form.description = '';
     },
   },
 };
