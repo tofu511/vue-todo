@@ -11,10 +11,10 @@
       <div class="form-control">
         <label class="label">Description</label>
         <textarea
-          v-model="form.description"
-          class="form-input"
-          cols="30"
-          rows="10"></textarea>
+        v-model="form.description"
+        class="form-input"
+        cols="30"
+        rows="10"></textarea>
       </div>
       <button
       @click="submitForm"

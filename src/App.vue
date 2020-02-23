@@ -63,23 +63,6 @@ export default {
   margin-top: 60px;
 }
 
-.is-primary {
-  background-color: #47ca47 !important;
-}
-
-.app-button {
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #795899;
-  color: white;
-  font-weight: bold;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 .todo {
   &-wrapper {
     display: flex;
