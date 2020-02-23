@@ -7,7 +7,7 @@
     </div>
     <div class="modal" :class="{'is-active': isOpen}">
       <div class="modal-content">
-        <span @click="isOpen = false" class="close">&times;</span>
+        <span @click="close" class="close">&times;</span>
         <slot />
       </div>
     </div>
@@ -19,6 +19,11 @@ export default {
     return {
       isOpen: false,
     };
+  },
+  methods: {
+    close() {
+      this.isOpen = false;
+    },
   },
 };
 </script>
