@@ -3,34 +3,47 @@
     <div class="form-control">
       <label class="label">Title</label>
       <input
+      :value="this.title"
       class="form-input"
       type="text">
     </div>
     <div class="form-control">
       <label class="label">Description</label>
       <textarea
+      :value="this.description"
       class="form-input"
       cols="30"
       rows="10"></textarea>
     </div>
     <button
-    @click="editTodo"
+    @click="updateTodo"
     type="button"
     class="app-button is-warning">Update</button>
     <button
-    @click="deleteTodo"
+    @click="cancel"
     type="button"
-    class="app-button is-danger">Delete</button>
+    class="app-button is-danger">Cancel</button>
   </form>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+  },
   methods: {
-    editTodo() {
+    updateTodo() {
       this.$emit('updated');
     },
-    deleteTodo() {
+    cancel() {
+      this.$emit('close');
     },
   },
 };

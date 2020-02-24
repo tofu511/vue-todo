@@ -11,9 +11,13 @@
     <button
     @click="editTodo"
     class="app-button is-warning">Edit</button>
+    <button
+    @click="deleteTodo"
+    type="button"
+    class="app-button is-danger">Delete</button>
   </div>
   <div v-else class="todo-item">
-    <todo-edit @updated="closeEdit" />
+    <todo-edit @updated="closeEdit" @close="closeEdit" :title="title" :description="description" />
   </div>
 </template>
 
@@ -46,6 +50,9 @@ export default {
     },
     closeEdit() {
       this.editMode = false;
+    },
+    deleteTodo() {
+
     },
   },
 };
