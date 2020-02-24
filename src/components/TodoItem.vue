@@ -17,12 +17,19 @@
     class="app-button is-danger">Delete</button>
   </div>
   <div v-else class="todo-item">
-    <todo-edit @updated="closeEdit" @close="closeEdit" :title="title" :description="description" />
+    <todo-edit
+    @updated="updateTodo"
+    @close="closeEdit"
+    :id="id"
+    :title="title"
+    :description="description" />
   </div>
 </template>
 
 <script>
 import TodoEdit from '@/components/TodoEdit.vue';
+
+import store from '@/store';
 
 export default {
   components: {
@@ -38,6 +45,10 @@ export default {
       required: false,
       default: 'Default Description',
     },
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -51,8 +62,11 @@ export default {
     closeEdit() {
       this.editMode = false;
     },
+    updateTodo(todo) {
+      store.dispatch('updateTodo', { ...todo });
+      this.closeEdit();
+    },
     deleteTodo() {
-
     },
   },
 };

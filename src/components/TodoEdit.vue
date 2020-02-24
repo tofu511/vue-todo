@@ -3,14 +3,14 @@
     <div class="form-control">
       <label class="label">Title</label>
       <input
-      :value="this.title"
+      v-model="todo.title"
       class="form-input"
       type="text">
     </div>
     <div class="form-control">
       <label class="label">Description</label>
       <textarea
-      :value="this.description"
+      v-model="todo.description"
       class="form-input"
       cols="30"
       rows="10"></textarea>
@@ -37,10 +37,23 @@ export default {
       type: String,
       required: true,
     },
+    id: {
+      type: String,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      todo: {
+        id: this.id,
+        title: this.title,
+        description: this.description,
+      },
+    };
   },
   methods: {
     updateTodo() {
-      this.$emit('updated');
+      this.$emit('updated', { ...this.todo });
     },
     cancel() {
       this.$emit('close');
