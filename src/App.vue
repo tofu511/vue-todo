@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     createTodo(todo) {
-      store.createTodo(todo);
+      store.dispatch('createTodo', todo);
     },
   },
 };
