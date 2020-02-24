@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import playground from './playground';
 import TodoList from '@/components/TodoList.vue';
 import TodoCreate from '@/components/TodoCreate.vue';
 
@@ -30,7 +29,7 @@ export default {
     };
   },
   created() {
-    playground();
+    this.todos = store.dispatch('initStore');
   },
   methods: {
     createTodo(todo) {
