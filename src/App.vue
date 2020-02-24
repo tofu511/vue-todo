@@ -16,6 +16,8 @@ import playground from './playground';
 import TodoList from '@/components/TodoList.vue';
 import TodoCreate from '@/components/TodoCreate.vue';
 
+import store from '@/store';
+
 export default {
   name: 'app',
   components: {
@@ -24,23 +26,7 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {
-          _id: '1',
-          title: 'Walk the dog',
-          description: 'Go to forrest near the Zoo',
-        },
-        {
-          _id: '2',
-          title: 'Buy a Bread',
-          description: 'whole grain bread would be good',
-        },
-        {
-          _id: '3',
-          title: 'Learn Programming',
-          description: 'preferable tomorrow',
-        },
-      ],
+      todos: store.state.todos,
     };
   },
   created() {
@@ -48,7 +34,7 @@ export default {
   },
   methods: {
     createTodo(todo) {
-      this.todos.push(todo);
+      store.createTodo(todo);
     },
   },
 };
