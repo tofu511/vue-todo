@@ -67,6 +67,7 @@ export default {
       this.closeEdit();
     },
     deleteTodo() {
+      store.dispatch('deleteTodo', this.id);
     },
   },
 };
